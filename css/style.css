@@ -360,11 +360,14 @@ margin:0 auto;background:url(../images/tail-cont.png);
 
 /*  Lists */
 
-.list-services{}
+/*.list-services{} */
 .list-services > li{padding-top:6px}
 .list-services > li:first-child{padding:0;}
 
+
+
 /*  Lists */
+
 .list {
 
 	padding:0 0 27px
@@ -647,3 +650,4 @@ footer {
 	color:#fcf9f9;	
 	display:inline-block;
 }
+
