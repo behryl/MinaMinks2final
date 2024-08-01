@@ -94,13 +94,13 @@
         <h1 class="logo"><a href="index.html"><img alt="MINA MINKS" "></a></h1>
         <nav>
           <ul class="menu">
-            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="bookappointment.php">Home</a></li>
             <li><a href="about-us-login.php">About Us</a></li>
             <li><a href="services-login.php">Services</a></li>
             <li><a href="gallery-login.php">Gallery</a></li>
             <li><a href="contact-login.php">Contacts</a></li>
             <li><a href="bookinghistory.php">Booking history</a></li>
-            <li><a href="invoicehistory.php">Invoice history</a></li>
+            <li class="current"><a href="invoicehistory.php">Invoice history</a></li>
             <li><a href="profile.php">Profile</a></li>
             <li><a href="setting.php">Setting</a></li>
             <li><a href="logout.php">Logout</a></li>
@@ -110,64 +110,23 @@
       </div>
     </div>
   </header>
-</div>
-<div class="block">
-  <div class="nav-buttons">
-    <div id="nav">&nbsp;</div>
-  </div>
-  <div class="row-1">
-    <div class="container_12">
-      <div class="wrapper aligncenter">
-        <button id="bookAppointmentBtn" class="button">Book Appointment</button>
-      </div>
-    <div class="container_12">
-      <div class="wrapper">
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img1.jpg" alt="">
-            <figcaption>Face Care <a href="more.html"></a></figcaption>
-          </figure>
-        </article>
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img2.jpg" alt="">
-            <figcaption>Hand Care <a href="more.html"></a></figcaption>
-          </figure>
-        </article>
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img3.jpg" alt="">
-            <figcaption>Foot Care <a href="more.html"></a></figcaption>
-          </figure>
-        </article>
+  <section id="content">
+    <div class="main-block">
+      <div class="container_12">
+        <div class="wrapper border-vert">
+          <article class="grid_5">
+            <h3>Invoice History</h3>
+            
+            
+          </article>
+          <article class="grid_5 prefix_2">
+            
+          </article>
+        </div>
       </div>
     </div>
-  </div>
-  <footer>
-    <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.html">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
-    </div>
-  </footer>
-  <div id="appointmentModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form>
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName"><br><br>
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName"><br><br>
-        <label for="service">Service:</label>
-        <input type="text" id="service" name="service"><br><br>
-        <label for="appointmentTime">Time:</label>
-        <input type="time" id="appointmentTime" name="appointmentTime"><br><br>
-        <label for="appointmentDate">Date:</label>
-        <input type="date" id="appointmentDate" name="appointmentDate"><br><br>
-        <label for="contact">Contact:</label>
-        <input type="tel" id="contact" name="contact"><br><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-        <input type="submit" value="Make an appointment">
-      </form>
-    </div>
-  </div>
-  
+  </section>
+
 </div>
 </body>
 </html>
