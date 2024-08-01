@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MINA MINKS | About Us</title>
+<title>Mina Minks | About Us</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="PNG image.JPEG" type="image/x-icon">
 <link rel="shortcut icon" href="PNG image.JPEG" type="image/x-icon">
@@ -12,7 +13,7 @@
 <script>
 $(document).ready(function () {
     $('body').bgStretcher({
-        images: ['images/slide-1.jpg'],
+        images: ['images/IMG_3193.JPG'],
         imageWidth: 1600,
         imageHeight: 964,
         resizeProportionally: true
@@ -41,7 +42,7 @@ $(document).ready(function () {
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo.png"></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png"style="height:80px;padding-left:200px"></a></h1>
         <nav>
           <ul class="menu">
             <li><a href="index.php">Home</a></li>
@@ -62,31 +63,37 @@ $(document).ready(function () {
       <div class="container_12">
         <div class="wrapper border-vert">
           <article class="grid_5">
-            <h3>Welcome</h3>
-            <figure class="img-rounded"><img src="images/page2-img1.jpg" alt=""> </figure>
-            <h4>Koleacene anritma hasesera deyulety. Cumrsocis natoqu eagnis distmtese duluese feugiata lecenas </h4>
-            <p><a href="#" class="link-1">Click here</a> for more info about this free website template created by TemplateMonster.com</p>
-            <p>quiacum socis nateagnis distese dulmue seugia lecenas str cies phase ledat enaec sit ame  gfdulyry f easer.  Fusce suscipit varius mi cum sociis natoque penati bus et magnis dis parturient montes nascetur ridicu . lorem. Maecenas tristique orci ac sem.  Fusce suscipit varius mi cum sociis natoque penati bus et magnis dishjlop. </p>
+            <h3>Welcome to Mina Minks Lash and Beauty Salon</h3>
+            <figure class="img-rounded"><img src="images/IMG12.jpg" alt=""> </figure>
+            <h4>At Mina Minks, we're passionate about helping you achieve the luscious, eye-catching lashes of your dreams. Founded in 2023, our mission is to provide a seamless, user-friendly platform for booking top-quality lash services with the best technicians in your area. Our Story:    
+            Mina Minks was born from a simple idea: make it easy for lash enthusiasts to find and book appointments with skilled, certified lash artists. Our founder, Beryl Bampoe Addo, experienced firsthand the frustration of searching for reliable lash services and decided to create a solution. Our Commitment
+We're dedicated to maintaining the highest standards in the lash industry. All technicians featured on Mina Minks are vetted for their qualifications, hygiene practices, and customer service. We believe that everyone deserves to feel confident and beautiful, and we're here to make that happen, one set of lashes at a time.
+Join the Mina Minks Community
+Whether you're a lash newbie or a seasoned aficionado, Mina Minks is your go-to destination for all things lashes. Book your next appointment with us and experience the difference that quality service and attention to detail can make.
+Let's flutter those lashes together!
+            </h4>
+            
+            <p></p>
             <a href="#" class="button">More</a> </article>
           <article class="grid_3 prefix_2">
             <h3>Our Services</h3>
             <ul class="list-services">
               <li>
                 <figure class="img-rounded1"><img src="images/page2-img2.jpg" alt=""> </figure>
-                <h4><a href="#">Skin Care Treatments</a></h4>
+                <h4><a href="#">Lash Extensions</a></h4>
                 <ul class="list">
-                  <li><a href="#">Glycolic Peel</a></li>
-                  <li><a href="#">Skin Lightening</a></li>
-                  <li><a href="#">Vtimamin C Facial</a></li>
+                  <li><a href="#">Classic Set</a></li>
+                  <li><a href="#">Hybrid Set</a></li>
+                  <li><a href="#">Volume Set</a></li>
                 </ul>
               </li>
               <li>
                 <figure class="img-rounded1"><img src="images/page2-img3.jpg" alt=""> </figure>
-                <h4><a href="#">Nail Services</a></h4>
+                <h4><a href="#">Beauty Services</a></h4>
                 <ul class="list">
-                  <li><a href="#">Manicures</a></li>
-                  <li><a href="#">Pedicures</a></li>
-                  <li><a href="#">Buff &amp; Polish</a></li>
+                  <li><a href="#">Lash Removals</a></li>
+                  <li><a href="#">Lash Refills</a></li>
+                  <li><a href="#">Microblading</a></li>
                 </ul>
               </li>
             </ul>
@@ -99,7 +106,6 @@ $(document).ready(function () {
 <div class="block">
   <footer>
     <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.php">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
     </div>
   </footer>
 </div>

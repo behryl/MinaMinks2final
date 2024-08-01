@@ -3,6 +3,7 @@
 <head>
 <title>MINA MINKS</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="PNG image.JPEG" type="image/x-icon">
 <link rel="shortcut icon" href="PNG image.JPEG" type="image/x-icon">

@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         header("Location: ../login.php?msg=One or more fields are empty. Please fill them.");
         exit();
     } else {
-        $stmt = $conn->prepare("SELECT ID, Password, rid FROM user WHERE Email = ?");
+        $stmt = $conn->prepare("SELECT userid, Password, roleid FROM users WHERE Email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -34,13 +34,13 @@ if (isset($_POST["submit"])) {
 
             if ($test) {
                 // Set session variables
-                $_SESSION['user_id'] = $row['ID'];
+                $_SESSION['userid'] = $row['userid'];
                 $_SESSION['email'] = $email;
-                $_SESSION['rid'] = $row['rid'];
+                $_SESSION['roleid'] = $row['roleid'];
 
                 // Redirect based on role ID
-                if ($row['rid'] == 1) {
-                    header("Location: ../admin/test.php"); //will change this to the admin page after i set it up 
+                if ($row['roleid'] == 1) {
+                    header("Location: ../admin/admindash.php"); //will change this to the admin page after i set it up 
                 } else {
                     header("Location: ../bookappointment.php?msg=login successful!");
                 }

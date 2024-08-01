@@ -1,18 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MINA MINKS</title>
+<title>Mina Minks |HomePage</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="PNG image.JPEG" type="image/x-icon">
 <link rel="shortcut icon" href="PNG image.JPEG" type="image/x-icon">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/bgstretcher.js"></script>
+
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Your other head contents -->
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the 'msg' parameter from the URL
+        const message = getQueryParam('msg');
+
+        if (message) {
+            // Decode the URL-encoded message
+            const decodedMessage = decodeURIComponent(message);
+
+            // Show the SweetAlert message
+            Swal.fire({
+                title: 'Notification',
+                text: decodedMessage,
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+        }
+    });
+    </script>
+
 <script>
   $(document).ready(function () {
       $('body').bgStretcher({
-          images: ['images/slide-1.jpg', 'images/slide-2.jpg', 'images/slide-3.jpg'],
+          images: ['images/IMG_3189.JPG', 'images/IMG_3195.JPG', 'images/IMG_3192.JPG'],
           imageWidth: 1600,
           imageHeight: 964,
           resizeProportionally: true,
@@ -48,10 +83,10 @@
     }
   
     .modal-content {
-      background-color: #fefefe;
+      background-color: #cd97c9;
       margin: 5% auto;
       padding: 20px;
-      border: 1px solid #888;
+      border: 3px solid #888;
       width: 80%;
     }
   
@@ -91,10 +126,10 @@
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.html"><img alt="MINA MINKS" "></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="MINA MINKS" "></a></h1>
         <nav>
           <ul class="menu">
-            <li class="current"><a href="index.html">Home</a></li>
+            <li class="current"><a href="index.php">Home</a></li>
             <li><a href="about-us.php">About Us</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="gallery.php">Gallery</a></li>
@@ -120,38 +155,44 @@
     <div class="container_12">
       <div class="wrapper">
         <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img1.jpg" alt="">
-            <figcaption>Face Care <a href="more.html"></a></figcaption>
+          <figure class="box-1"><img src="images/IMG2.jpg" alt="">
+            <figcaption>Lash Extension </figcaption>
           </figure>
         </article>
         <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img2.jpg" alt="">
-            <figcaption>Hand Care <a href="more.html"></a></figcaption>
+          <figure class="box-1"><img src="images/IMG3.jpg" alt="">
+            <figcaption>Lash Removal </figcaption>
           </figure>
         </article>
         <article class="grid_4">
-          <figure class="box-1"><img src="images/page1-img3.jpg" alt="">
-            <figcaption>Foot Care <a href="more.html"></a></figcaption>
+          <figure class="box-1"><img src="images/IMG7.jpg" alt="">
+            <figcaption>Lash Refill </figcaption>
           </figure>
         </article>
       </div>
     </div>
   </div>
   <footer>
-    <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.html">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
-    </div>
+   
   </footer>
   <div id="appointmentModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <form>
+        <span class="close">&times;</span>
+        <form action="actions/process_appointment.php" method="post">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" name="firstName"><br><br>
         <label for="lastName">Last Name:</label>
         <input type="text" id="lastName" name="lastName"><br><br>
         <label for="service">Service:</label>
-        <input type="text" id="service" name="service"><br><br>
+            <select id="service" name="service">
+                <?php
+                include './functions/getallservices.php';
+                $services = fetchServices($conn);
+                foreach ($services as $service) {
+                    echo '<option value="'.$service['serviceid'].'">'.$service['servicename'].'</option>';
+                }
+                ?>
+            </select><br><br>
         <label for="appointmentTime">Time:</label>
         <input type="time" id="appointmentTime" name="appointmentTime"><br><br>
         <label for="appointmentDate">Date:</label>
@@ -160,11 +201,10 @@
         <input type="tel" id="contact" name="contact"><br><br>
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Make an appointment">
       </form>
     </div>
-  </div>
-  
+</div>
 </div>
 </body>
 </html>

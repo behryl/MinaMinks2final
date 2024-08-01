@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
     $phonenumber = test_input($_POST["number"]);
     $password_confirmation = test_input($_POST["password2"]);
 
-    // Default role id for normal users
+    // Hardcoded role id for normal users
     $role_id = 2;
 
     // Validation checks
@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
     }
 
     // Check if email already exists
-    $stmt = $conn->prepare("SELECT Email FROM user WHERE Email = ?");
+    $stmt = $conn->prepare("SELECT Email FROM users WHERE Email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -78,8 +78,8 @@ if (isset($_POST["submit"])) {
     } else {
         $final_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $stmt = $conn->prepare("INSERT INTO user (FirstName, LastName, MobileNumber, Email, Password, rid) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssi", $firstname, $lastname, $phonenumber, $email, $final_password, $role_id);
+        $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password, phonenumber, password_confirmation, roleid) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssi", $firstname, $lastname, $email, $final_password, $phonenumber, $password_confirmation, $role_id);
 
         if ($stmt->execute()) {
             header("Location: ../login.php?msg=You have successfully registered.");

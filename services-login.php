@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Enigma Spa Salon | Services</title>
+<title>Mina Minks | Services</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -41,7 +42,8 @@ $(document).ready(function () {
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.html"><img alt="" src="images/logo.png"></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png"style="height:80px;padding-left:200px"></a></h1>
+
         <nav>
           <ul class="menu">
             <li><a href="bookappointment.php">Home</a></li>
@@ -50,9 +52,7 @@ $(document).ready(function () {
             <li><a href="gallery-login.php">Gallery</a></li>
             <li><a href="contacts.login.php">Contacts</a></li>
             <li><a href="booking.php">Booking history</a></li>
-            <li><a href="invoicehistory.php">Invoice history</a></li>
             <li><a href="profile.php">Profile</a></li>
-            <li><a href="setting.php">Setting</a></li>
             <li><a href="logout.php">Logout</a></li>
            
           </ul>
@@ -67,30 +67,30 @@ $(document).ready(function () {
       <div class="wrapper">
         <article class="grid_4">
           <figure class="img-rounded img-indent"><img src="images/page3-img1.jpg" alt=""> </figure>
-          <h4>Salon Services</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dapibus justo ut convallis. Curabitur nulla nunc, varius eget iaculis et, facilisis id magna. Nulla ut orci lectus, adipiscing interdum massa. Fusce lacinia enim rutrum turpis imperdiet vel.</p>
+          <h4>Lash Services</h4>
+          <p>Enhance your natural beauty with our range of lash extension services. Our skilled technicians use premium materials to create stunning, customized looks that complement your eyes and lifestyle. From subtle enhancements to dramatic transformations, we offer:</p>
           <ul class="list">
-            <li><a href="more.php">Cosmetic Application</a></li>
-            <li><a href="more.php">Hair Services</a></li>
-            <li><a href="more.php">Natural Nail Care</a></li>
-            <li><a href="more.php">Combination Packages</a></li>
+            <li><a href="more.php">Classic Set Services</a></li>
+            <li><a href="more.php">Hybrid Set Services</a></li>
+            <li><a href="more.php">Volume Set Services</a></li>
+            <li><a href="more.php">Mega Volume Services</a></li>
           </ul>
           <a href="more.php" class="button">More</a> </article>
         <article class="grid_4">
           <figure class="img-rounded img-indent"><img src="images/page3-img2.jpg" alt=""> </figure>
           <h4>Spa Services</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dapibus justo ut convallis. Curabitur nulla nunc, varius eget iaculis et, facilisis id magna. Nulla ut orci lectus, adipiscing interdum massa. Fusce lacinia enim rutrum turpis imperdiet vel. </p>
+          <p>Frame your face with perfectly sculpted brows. Our expert technicians offer a range of brow services to enhance your natural beauty and create the ideal shape for your face. Whether you're looking for a subtle touch-up or a complete brow transformation, we have the perfect solution: </p>
           <ul class="list">
             <li><a href="more.php">Body Polishes</a></li>
             <li><a href="more.php">Body Wraps</a></li>
             <li><a href="more.php">Facials</a></li>
             <li><a href="more.php">Massage</a></li>
           </ul>
-          <a href="more.html" class="button">More</a> </article>
+          <a href="more.php" class="button">More</a> </article>
         <article class="grid_4">
           <figure class="img-rounded img-indent"><img src="images/page3-img3.jpg" alt=""> </figure>
-          <h4>Medi-Spa Services</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dapibus justo ut convallis. Curabitur nulla nunc, varius eget iaculis et, facilisis id magna. Nulla ut orci lectus, adipiscing interdum massa. Fusce lacinia enim rutrum turpis imperdiet vel. </p>
+          <h4>Salon Services</h4>
+          <p>Maintain your lash and brow perfection with our essential salon services. We understand that beauty routines require ongoing care, which is why we offer: </p>
           <ul class="list">
             <li><a href="more.php">Botox</a></li>
             <li><a href="more.php">Restylane</a></li>

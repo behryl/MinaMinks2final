@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Enigma Spa Salon | Contacts</title>
+<title>Mina Minks Lash Salon| Contacts</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -42,7 +43,7 @@ $(document).ready(function () {
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo.png"></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png"style="height:80px;padding-left:200px"></a></h1>
         <nav>
           <ul class="menu">
             <li><a href="bookappointment.php">Home</a></li>
@@ -51,9 +52,7 @@ $(document).ready(function () {
             <li><a href="gallery-login.php">Gallery</a></li>
             <li class="current"><a href="contacts.php">Contacts</a></li>
             <li><a href="bookinghistory.php">Booking history</a></li>
-            <li><a href="invoicehistory.php">Invoice history</a></li>
             <li><a href="profile.php">Profile</a></li>
-            <li><a href="setting.php">Setting</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
         </nav>
@@ -119,9 +118,6 @@ $(document).ready(function () {
 </div>
 <div class="block">
   <footer>
-    <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.php">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
-    </div>
   </footer>
 </div>
 </body>

@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login and Registration Form in HTML & CSS | CodingLab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Minks | Register</title>
     <!-- Link to your style.css file -->
     <link rel="stylesheet" href="css/login.css">
     <!-- Fontawesome CDN Link -->
@@ -50,7 +51,7 @@
                             <div class="button input-box">
                                 <input type="submit" name="submit" value="Submit">
                             </div>
-                            <div class="text sign-up-text">Already have an account? <label for="flip"> <a href="../login/login_view.php">Login now</a></label></div>
+                            <div class="text sign-up-text">Already have an account? <label for="flip"> <a href="login.php">Login now</a></label></div>
                         </div>
                     </form>
                 </div>

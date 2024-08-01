@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MINA MINKS | About Us</title>
+<title>MINA MINKS | Login</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="PNG image.JPEG" type="image/x-icon">
 <link rel="shortcut icon" href="PNG image.JPEG" type="image/x-icon">
@@ -12,7 +13,7 @@
 <script>
 $(document).ready(function () {
     $('body').bgStretcher({
-        images: ['images/slide-1.jpg'],
+        images: ['images/IMG_3194.JPG'],
         imageWidth: 1600,
         imageHeight: 964,
         resizeProportionally: true
@@ -41,16 +42,16 @@ $(document).ready(function () {
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo.png"></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png"style="height:80px;padding-left:200px"></a></h1>
         <nav>
           <ul class="menu">
             <li><a href="index.php">Home</a></li>
-            <li class="current"><a href="about-us.php">About Us</a></li>
+            <li><a href="about-us.php">About Us</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="gallery.php">Gallery</a></li>
             <li><a href="contacts.php">Contacts</a></li>
             <li><a href="signup.php">Sign Up</a></li>
-            <li><a href="login.php">Login</a></li>
+            <li class="current" ><a href="login.php">Login</a></li>
           </ul>
         </nav>
         <div class="clear"></div>
@@ -295,9 +296,7 @@ $(document).ready(function () {
 }
   </style>
   <footer>
-    <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.php">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
-    </div>
+    
   </footer>
 </div>
 </body>
