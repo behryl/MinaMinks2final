@@ -13,10 +13,14 @@ include("../settings/core.php");
 //     exit;
 // }
 
-$query = "SELECT b.bookingid, b.serviceid, b.bookingtime, b.bookingdate, b.message, s.servicename
+$query = "SELECT b.bookingid, b.serviceid, b.bookingtime, b.bookingdate, b.message, s.servicename, st.status_name, st.status_id, u.firstname, u.lastname
           FROM bookings b
           JOIN services s ON b.serviceid = s.serviceid
+          JOIN bstatus st ON b.bookingstatus = st.status_id
+                    JOIN users u ON b.userid = u.userid
+
           ORDER BY b.bookingdate DESC";
+
 
 $stmt = $conn->prepare($query);
 if ($stmt) {

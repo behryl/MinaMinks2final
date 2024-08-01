@@ -97,7 +97,7 @@ Let's flutter those lashes together!
                 </ul>
               </li>
             </ul>
-            <a href="#" class="button">More</a> </article>
+
         </div>
       </div>
     </div>

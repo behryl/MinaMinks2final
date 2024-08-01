@@ -20,6 +20,74 @@
   <!-- Your other head contents -->
 
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      const appointmentDate = document.getElementById('appointmentDate');
+      const appointmentTime = document.getElementById('appointmentTime');
+      const service = document.getElementById('service');
+      const message = document.getElementById('message');
+
+      // Set min date to today
+      const today = new Date().toISOString().split('T')[0];
+      appointmentDate.setAttribute('min', today);
+
+      // Load saved form data from sessionStorage
+      const savedData = JSON.parse(sessionStorage.getItem('formData'));
+      if (savedData) {
+        document.getElementById('service').value = savedData.service || '';
+        document.getElementById('appointmentTime').value = savedData.appointmentTime || '';
+        document.getElementById('appointmentDate').value = savedData.appointmentDate || '';
+        document.getElementById('message').value = savedData.message || '';
+      }
+      
+
+      form.addEventListener('submit', function(event) {
+        let isValid = true;
+        let errorMsg = '';
+
+        // Validate Service
+        if (!service.value) {
+          isValid = false;
+          errorMsg += 'Please select a service.\n';
+        }
+
+        // Validate Time
+        if (!appointmentTime.value) {
+          isValid = false;
+          errorMsg += 'Appointment Time is required.\n';
+        }
+
+        // Validate Date
+        const selectedDate = new Date(appointmentDate.value);
+        if (!appointmentDate.value) {
+          isValid = false;
+          errorMsg += 'Appointment Date is required.\n';
+        } else if (selectedDate < new Date(today)) {
+          isValid = false;
+          errorMsg += 'Appointment Date cannot be before today.\n';
+        }
+
+        // Validate Message
+        if (!message.value.trim()) {
+          isValid = false;
+          errorMsg += 'Message cannot be empty.\n';
+        }
+
+        // If invalid, show an alert and prevent form submission
+        if (!isValid) {
+          Swal.fire({
+            title: 'Validation Error',
+            text: errorMsg,
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Function to get URL parameters
       function getQueryParam(param) {
@@ -137,10 +205,10 @@
     <header>
       <div class="row-nav">
         <div class="main">
-          <h1 class="logo"><a href="index.html"><img alt="MINA MINKS" "></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png" style="height:80px;padding-left:200px"></a></h1>
         <nav>
           <ul class=" menu">
-              <li class="current"><a href="index.html">Home</a></li>
+              <li class="current"><a href="index.php">Home</a></li>
               <li><a href="about-us-login.php">About Us</a></li>
               <li><a href="services-login.php">Services</a></li>
               <li><a href="gallery-login.php">Gallery</a></li>
@@ -164,26 +232,26 @@
         <div class="wrapper aligncenter">
           <button id="bookAppointmentBtn" class="button">Book Appointment</button>
         </div>
-      <div class="wrapper">
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/IMG2.jpg" alt="">
-            <figcaption>Lash Extension </figcaption>
-          </figure>
-        </article>
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/IMG3.jpg" alt="">
-            <figcaption>Lash Removal </figcaption>
-          </figure>
-        </article>
-        <article class="grid_4">
-          <figure class="box-1"><img src="images/IMG7.jpg" alt="">
-            <figcaption>Lash Refill </figcaption>
-          </figure>
-        </article>
-      </div>
+        <div class="wrapper">
+          <article class="grid_4">
+            <figure class="box-1"><img src="images/IMG2.jpg" alt="">
+              <figcaption>Lash Extension </figcaption>
+            </figure>
+          </article>
+          <article class="grid_4">
+            <figure class="box-1"><img src="images/IMG3.jpg" alt="">
+              <figcaption>Lash Removal </figcaption>
+            </figure>
+          </article>
+          <article class="grid_4">
+            <figure class="box-1"><img src="images/IMG7.jpg" alt="">
+              <figcaption>Lash Refill </figcaption>
+            </figure>
+          </article>
+        </div>
       </div>
       <footer>
-      
+
       </footer>
       <div id="appointmentModal" class="modal">
         <div class="modal-content">

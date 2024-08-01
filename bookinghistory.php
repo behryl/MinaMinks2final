@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,31 +12,6 @@
   <script src="js/jquery-migrate-1.1.1.js"></script>
   <script src="js/bgstretcher.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Include SweetAlert -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Function to get URL parameters
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        // Get the 'msg' parameter from the URL
-        const message = getQueryParam('msg');
-
-        if (message) {
-            // Decode the URL-encoded message
-            const decodedMessage = decodeURIComponent(message);
-
-            // Show the SweetAlert message
-            Swal.fire({
-                title: 'Notification',
-                text: decodedMessage,
-                icon: 'info',
-                confirmButtonText: 'OK'
-            });
-        }
-    });
-    </script>
 
   <script>
     $(document).ready(function() {
@@ -74,9 +48,13 @@
             data.forEach(function(booking) {
               let currentDate = new Date();
               let bookingDate = new Date(booking.bookingdate);
-              let editable = currentDate < bookingDate ? `<button class="editBtn" data-id="${booking.bookingid}">Edit</button>` : '';
-              let deletetable = currentDate < bookingDate ? `<button class="deleteBtn" data-id="${booking.bookingid}">Delete</button>` : '';
+              let editable = '';
+              let deletetable = '';
 
+              if (booking.status_id === 1 || booking.status_id === 3) {
+                editable = currentDate < bookingDate ? `<button class="editBtn" data-id="${booking.bookingid}">Edit</button>` : '';
+                deletetable = currentDate < bookingDate ? `<button class="deleteBtn" data-id="${booking.bookingid}">Delete</button>` : '';
+              }
               tableContent += `
             <tr>
               <td>${booking.servicename}</td>
@@ -126,7 +104,7 @@
               success: function(response) {
                 if (response.status === 'success') {
                   Swal.fire('Deleted!', response.message, 'success');
-                  fetchBookings(); 
+                  fetchBookings();
                 } else {
                   Swal.fire('Error!', response.message, 'error');
                 }
@@ -141,6 +119,32 @@
       });
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Function to get URL parameters
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Get the 'msg' parameter from the URL
+      const message = getQueryParam('msg');
+
+      if (message) {
+        // Decode the URL-encoded message
+        const decodedMessage = decodeURIComponent(message);
+
+        // Show the SweetAlert message
+        Swal.fire({
+          title: 'Notification',
+          text: decodedMessage,
+          icon: 'info',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
+
   <style>
     .modal {
       display: none;

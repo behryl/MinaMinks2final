@@ -12,17 +12,13 @@ if ($userId === null) {
     exit;
 }
 
-$query = "SELECT b.bookingid, b.serviceid, b.bookingtime, b.bookingdate, b.message, s.servicename
+$query = "SELECT b.bookingid, b.serviceid, b.bookingtime, b.bookingdate, b.message, s.servicename, st.status_name, st.status_id
           FROM bookings b
           JOIN services s ON b.serviceid = s.serviceid
           JOIN bstatus st ON b.bookingstatus = st.status_id
           WHERE b.userid = ?
           ORDER BY b.bookingdate DESC";
-// $query = "SELECT b.bookingid, b.serviceid, b.bookingtime, b.bookingdate, b.message, s.servicename 
-//           FROM bookings b
-//           JOIN services s ON b.serviceid = s.serviceid
-//           WHERE b.userid = ?
-//           ORDER BY b.bookingdate DESC";
+
 
 $stmt = $conn->prepare($query);
 if ($stmt) {
@@ -34,11 +30,6 @@ if ($stmt) {
     while ($row = $result->fetch_assoc()) {
         $bookings[] = $row;
     }
-
-    // Print the bookings array
-    echo "<pre>";
-    print_r($bookings);
-    echo "</pre>";
     $stmt->close();
 
     
