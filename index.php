@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Mina Minks | HomePage</title>
+  <title>Mina Minks |HomePage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
@@ -16,9 +16,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- SweetAlert JS -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Your other head contents -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       const form = document.querySelector('form');
       const firstName = document.getElementById('firstName');
       const lastName = document.getElementById('lastName');
@@ -26,11 +27,13 @@
       const appointmentTime = document.getElementById('appointmentTime');
       const appointmentDate = document.getElementById('appointmentDate');
       const contact = document.getElementById('contact');
-      const messageInput = document.getElementById('message');
+      const message = document.getElementById('message');
 
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
 
+
+
+
+      form.addEventListener('submit', function(event) {
         let isValid = true;
         let errorMsg = '';
 
@@ -77,11 +80,12 @@
         }
 
         // Validate Message
-        if (!messageInput.value.trim()) {
+        if (!message.value.trim()) {
           isValid = false;
           errorMsg += 'Message cannot be empty.\n';
         }
 
+        // If invalid, show an alert, save form data, and prevent form submission
         if (!isValid) {
           Swal.fire({
             title: 'Validation Error',
@@ -90,6 +94,7 @@
             confirmButtonText: 'OK'
           });
 
+          // Save form data to sessionStorage
           sessionStorage.setItem('formData', JSON.stringify({
             firstName: firstName.value,
             lastName: lastName.value,
@@ -97,47 +102,21 @@
             appointmentTime: appointmentTime.value,
             appointmentDate: appointmentDate.value,
             contact: contact.value,
-            message: messageInput.value
+            message: message.value
           }));
+
+          event.preventDefault();
         } else {
-          const formData = new FormData(form);
-
-          fetch('actions/process_appointment.php', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.status === 'success') {
-              Swal.fire({
-                title: 'Appointment Booked',
-                text: `Your booking ID is ${data.bookingID}. Please use this ID for confirmation.`,
-                icon: 'success',
-                confirmButtonText: 'OK'
-              });
-              sessionStorage.removeItem('formData');
-              form.reset();
-            } else {
-              Swal.fire({
-                title: 'Error',
-                text: data.message,
-                icon: 'error',
-                confirmButtonText: 'OK'
-              });
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            Swal.fire({
-              title: 'Error',
-              text: 'An error occurred while processing your appointment. Please try again later.',
-              icon: 'error',
-              confirmButtonText: 'OK'
-            });
-          });
+          // Clear form data from sessionStorage upon successful submission
+          sessionStorage.removeItem('formData');
         }
-      });
 
+
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
       // Function to get URL parameters
       function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -145,11 +124,11 @@
       }
 
       // Get the 'msg' parameter from the URL
-      const queryMsg = getQueryParam('msg');
+      const message = getQueryParam('msg');
 
-      if (queryMsg) {
+      if (message) {
         // Decode the URL-encoded message
-        const decodedMessage = decodeURIComponent(queryMsg);
+        const decodedMessage = decodeURIComponent(message);
 
         // Show the SweetAlert message
         Swal.fire({
@@ -163,7 +142,7 @@
   </script>
 
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       $('body').bgStretcher({
         images: ['images/IMG_3189.JPG', 'images/IMG_3195.JPG', 'images/IMG_3192.JPG'],
         imageWidth: 1600,
@@ -175,11 +154,11 @@
         sequenceMode: 'normal',
         pagination: '#nav'
       });
-      $('#bookAppointmentBtn').click(function () {
+      $('#bookAppointmentBtn').click(function() {
         $('#appointmentModal').show();
       });
 
-      $('.close').click(function () {
+      $('.close').click(function() {
         $('#appointmentModal').hide();
       });
     });
@@ -223,13 +202,13 @@
     }
   </style>
   <!--[if lt IE 9]>   
-  <script src="js/html5shiv.js"></script>
-  <link href="css/ie.css" rel="stylesheet" type="text/css" media="screen">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">  
-  <![endif]-->
+<script src="js/html5shiv.js"></script>
+<link href="css/ie.css" rel="stylesheet" type="text/css" media="screen">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">  
+<![endif]-->
 </head>
 
 <body>
@@ -248,7 +227,7 @@
           <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png" style="height:80px;padding-left:200px"></a></h1>
           <nav>
             <ul class="menu">
-              <li class="current"><a href="index.php">Home</a></li>
+              <li  class="current" ><a href="index.php">Home</a></li>
               <li><a href="about-us.php">About Us</a></li>
               <li><a href="services.php">Services</a></li>
               <li><a href="gallery.php">Gallery</a></li>

@@ -6,10 +6,6 @@ ini_set('display_errors', 1);
 // Include database connection file
 include("../settings/connection.php");
 include("../settings/core.php");
-
-// Create an array to store the response
-$response = array();
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $firstName = htmlspecialchars($_POST['firstName']);
@@ -28,59 +24,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Simple validation
     if (empty($service_id) || empty($appointment_time) || empty($appointment_date)) {
-        $response['status'] = 'error';
-        $response['message'] = 'All fields are required.';
-    } else {
-        $currentDate = new DateTime();
-        $appointmentDate = new DateTime($appointment_date);
+        header("Location: ../index.php?msg=All fields are required.");
+        exit;
+    }
 
-        if ($appointmentDate < $currentDate) {
-            $response['status'] = 'error';
-            $response['message'] = 'Error: The appointment date cannot be in the past.';
+    $currentDate = new DateTime();
+    $appointmentDate = new DateTime($appointment_date);
+
+    if ($appointmentDate < $currentDate) {
+        header("Location: ../index.php?msg=Error: The appointment date cannot be in the past.");
+        exit;
+    }
+
+    // Use the global connection
+    global $conn; // Ensure this refers to the valid connection
+
+    // Check if $conn is valid
+    if ($conn === null) {
+        die("Database connection not established.");
+    }
+
+
+
+    // try {
+    // Insert user data into the users table
+    $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password, phonenumber, password_confirmation) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $phoneNumber, $passwordConfirmation);
+    $stmt->execute();
+
+    // Get the user ID of the newly inserted user
+    $userId = $stmt->insert_id;
+
+
+
+
+
+
+    // Insert data into the database using prepared statements
+    $stmt = $conn->prepare("INSERT INTO bookings (userid, serviceid,bookingtime , message,bookingdate, bookingstatus ) VALUES (?, ?, ?, ?, ?, 3)");
+    if ($stmt) {
+        $stmt->bind_param("iisss", $userId, $service_id, $appointment_time, $message, $appointment_date);
+
+        if ($stmt->execute()) {
+            header("Location: ../index.php?msg=Appointment successfully booked.");
         } else {
-            // Use the global connection
-            global $conn; // Ensure this refers to the valid connection
-
-            // Check if $conn is valid
-            if ($conn === null) {
-                $response['status'] = 'error';
-                $response['message'] = 'Database connection not established.';
-            } else {
-                // Insert user data into the users table
-                $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password, phonenumber, password_confirmation) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("ssssss", $firstName, $lastName, $email, $password, $phoneNumber, $passwordConfirmation);
-                $stmt->execute();
-
-                // Get the user ID of the newly inserted user
-                $userId = $stmt->insert_id;
-
-                // Insert data into the database using prepared statements
-                $stmt = $conn->prepare("INSERT INTO bookings (userid, serviceid, bookingtime, message, bookingdate, bookingstatus) VALUES (?, ?, ?, ?, ?, 3)");
-                if ($stmt) {
-                    $stmt->bind_param("iisss", $userId, $service_id, $appointment_time, $message, $appointment_date);
-
-                    if ($stmt->execute()) {
-                        $response['status'] = 'success';
-                        $response['bookingID'] = $stmt->insert_id; // Or however you generate the booking ID
-                        $response['message'] = 'Appointment successfully booked.';
-                    } else {
-                        $response['status'] = 'error';
-                        $response['message'] = 'Error: ' . $stmt->error;
-                    }
-
-                    $stmt->close();
-                } else {
-                    $response['status'] = 'error';
-                    $response['message'] = 'Error: ' . $conn->error;
-                }
-            }
+            header("Location: ../index.php?msg=Error: " . $stmt->error);
         }
+
+        $stmt->close();
+    } else {
+        header("Location: ../index.php?msg=Error: " . $conn->error);
     }
 }
-
-// Set the Content-Type to application/json
-header('Content-Type: application/json');
-
-// Output the JSON response
-echo json_encode($response);
-?>
