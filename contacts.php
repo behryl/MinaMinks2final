@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Enigma Spa Salon | Contacts</title>
+<title>Mina Minks| Contacts</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -13,7 +14,7 @@
 <script>
 $(document).ready(function () {
     $('body').bgStretcher({
-        images: ['images/slide-1.jpg'],
+        images: ['images/IMG_3194.JPG'],
         imageWidth: 1600,
         imageHeight: 964,
         resizeProportionally: true
@@ -42,7 +43,7 @@ $(document).ready(function () {
   <header>
     <div class="row-nav">
       <div class="main">
-        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo.png"></a></h1>
+        <h1 class="logo"><a href="index.php"><img alt="" src="images/logo2.png"style="height:80px;padding-left:200px"></a></h1>
         <nav>
           <ul class="menu">
             <li><a href="index.php">Home</a></li>
@@ -68,12 +69,12 @@ $(document).ready(function () {
               <iframe src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"> </iframe>
             </div>
             <dl class="address">
-              <dt>The Company Name Inc.<br>
-                8901 Marmora Road,<br>
-                Glasgow, D04 89GR.</dt>
-              <dd> <span>Freephone:</span> +1 800 559 6580 </dd>
-              <dd> <span>Telephone:</span> +1 800 603 6035 </dd>
-              <dd> <span>FAX:</span> +1 800 889 9898 </dd>
+              <dt>Mina Minks Inc.<br>
+                Ashesi University<br>
+                University Avenue, D04 89GR.</dt>
+              <dd> <span>Freephone:</span> 0302 444 567 </dd>
+              <dd> <span>Telephone:</span> +233 505 298 278 </dd>
+              <dd> <span>FAX:</span> +233 267 785 456 </dd>
             </dl>
           </article>
           <article class="grid_5 prefix_2">
@@ -116,9 +117,7 @@ $(document).ready(function () {
 </div>
 <div class="block">
   <footer>
-    <div class="main aligncenter">
-      <div class="privacy"><strong>Enigma Spa Salon &copy; 2045 | <a href="privacy-policy.php">Privacy Policy</a> | Design by: <a href="http://www.templatemonster.com">TemplateMonster.com</a></strong></div>
-    </div>
+    
   </footer>
 </div>
 </body>
