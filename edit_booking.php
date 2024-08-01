@@ -137,11 +137,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
                             <li><a href="about-us-login.php">About Us</a></li>
                             <li><a href="services-login.php">Services</a></li>
                             <li><a href="gallery-login.php">Gallery</a></li>
-                            <li><a href="contact-login.php">Contacts</a></li>
-                            <li class="current"><a href="bookinghistory.php">Booking history</a></li>
+                                            <li class="current"><a href="bookinghistory.php">Booking history</a></li>
                             <li><a href="invoicehistory.php">Invoice history</a></li>
-                            <li><a href="profile.php">Profile</a></li>
-                            <li><a href="setting.php">Setting</a></li>
+                                            <li><a href="setting.php">Setting</a></li>
                             <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </nav>

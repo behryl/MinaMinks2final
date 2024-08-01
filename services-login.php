@@ -52,7 +52,6 @@ $(document).ready(function () {
             <li><a href="gallery-login.php">Gallery</a></li>
             <li><a href="contacts.login.php">Contacts</a></li>
             <li><a href="booking.php">Booking history</a></li>
-            <li><a href="profile.php">Profile</a></li>
             <li><a href="logout.php">Logout</a></li>
            
           </ul>

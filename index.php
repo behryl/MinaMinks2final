@@ -231,7 +231,7 @@
               <li><a href="about-us.php">About Us</a></li>
               <li><a href="services.php">Services</a></li>
               <li><a href="gallery.php">Gallery</a></li>
-              <li><a href="contacts.php">Contacts</a></li>
+              
               <li><a href="signup.php">Sign Up</a></li>
               <li><a href="login.php">Login</a></li>
             </ul>

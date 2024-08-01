@@ -49,7 +49,7 @@ $(document).ready(function () {
             <li><a href="about-us.php">About Us</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="contacts.php">Contacts</a></li>
+            
           </ul>
         </nav>
         <div class="clear"></div>
