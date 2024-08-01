@@ -1,38 +1,27 @@
-======================================================================
+Mina Minks Booking System
 
-	  Website Template Name: Spa Salon
-	  Website Template URI: http://www.templatemonster.com/free-templates/free-website-template-spa-salon.php
-	  Author: TemplateMonster.com Team
-	  Author URI: http://www.templatemonster.com/
+Overview
 
-======================================================================
+The Mina Minks Booking System allows users to book appointments for various lash services. This system includes a front-end web interface with form validation and a back-end script for processing and storing appointment data. It uses PHP for server-side processing, MySQL for database storage, and SweetAlert for user notifications.
 
+Features
 
-   +++ Be sure to visit TemplateMonster.com for more website templates +++
+User Form Validation: Ensures all required fields are filled out correctly before submission.
+Dynamic Service Options: Fetches service options from the database to populate the booking form.
+SweetAlert Notifications: Provides user-friendly alerts for both success and error messages.
+Modal Interface: Uses a modal dialog for appointment booking, enhancing the user experience.
+Database Integration: Stores user and booking information securely in a MySQL database.
+Technologies Used
 
+HTML/CSS: Structure and styling of the web interface.
+JavaScript: Form validation and dynamic UI updates.
+jQuery: Simplified JavaScript operations and animations.
+SweetAlert2: Enhanced alert messages and notifications.
+PHP: Server-side script for handling form submissions and database interactions.
+MySQL: Database for storing user and appointment data.
+Installation
 
-   +++ License +++
-  Spa Salon template is 100% FREE!  We kindly ask you to
-   leave the footer links intact. Thank you so much! :)
-
-   
-
-   +++ INSTALLATION & EDITING +++
-
-   - Copy all the files from the 'site' directory to the appropriate (usually 'www' or 'public_html') directory on your hosting. That's it.
-   - This template may be edited with any HTML editor. If you do not know where to get one, you may consider trying NotePad++. It can be downloaded at notepad-plus.sourceforge.net and it's free.
-
-
-
-   +++ HOW TO PUT YOUR OWN LOGO+++
-
-   You need to replace logo.png (it is located in site>images>logo.png) with your own .png file. 
-
-
-   +++ IMPORTANT NOTICE +++
-
-   TemplateMonster doesn't provide support services on free templates - including this one. We only provide support for the products that are being purchased from TemplateMonster.
-   Our free templates are produced according to the latest web standards and we’ve been trying to make the process of working with them as easy as possible, so for people with minimum web develpment 
-   experience it should be easy to work with them. 
-
-   
+Prerequisites
+Web server with PHP and MySQL support (e.g., Apache, Nginx)
+PHP version 7.0 or higher
+MySQL database
